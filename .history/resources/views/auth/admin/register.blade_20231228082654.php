@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Registration Page</title>
+    <title>Admin Register</title>
 
+    <!-- Bootstrap CSS (CDN) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-
-    <!-- Bootstrap Icons (CDN) -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
 
 
@@ -28,8 +27,8 @@
         }
 
         .card-header {
-            background-color: #007bff;
             text-align: center;
+            background-color: #007bff;
             color: #fff;
             border-radius: 15px 15px 0 0;
         }
@@ -50,26 +49,23 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
+                <div class="card-header">{{ __('Admin Register') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
+                    <form method="POST" action="{{ route('admin.register') }}">
                         @csrf
-
                         <div class="mb-3 row">
                             <label for="name" class="col-md-4 col-form-label text-md-end">{{ __('Name') }}</label>
                             <div class="col-md-8">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="name" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                             </div>
                         </div>
-
                         <div class="mb-3 row">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
+                            <label for="Email" class="col-md-4 col-form-label text-md-end">{{ __('Email') }}</label>
                             <div class="col-md-8">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
                             </div>
                         </div>
-
                         <div class="mb-3 row">
                             <label for="phone" class="col-md-4 col-form-label text-md-end">{{ __('Phone Number') }}</label>
                             <div class="col-md-8">
@@ -77,8 +73,6 @@
                                 <small class="text-muted">Use the format: 123-456-7890</small>
                             </div>
                         </div>
-
-                      
 
                         <div class="mb-3 row">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>

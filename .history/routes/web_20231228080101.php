@@ -3,7 +3,6 @@
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,14 +18,6 @@ use App\Http\Controllers\AdminController;
 Route::get('/', function () {
     return view('welcome');
 });
-//admin login and register
-
-Route::get('admin/register',[AdminController::class, 'Admin_Register_Form'])->name('admin.register-form');
-Route::post('admin/register',[AdminController::class, 'Admin_register'])->name('admin.register');
-
-Route::get('admin/login',[AdminController::class, 'Admin_Login_Form'])->name('admin.login-form');
-Route::post('admin/login',[AdminController::class, 'Admin_Login'])->name('admin.login');
-//user login/register
 Route::get('/register',[AuthController::class, 'register_form'])->name('register-form');
 Route::post('/register',[AuthController::class, 'register'])->name('register');
 
@@ -40,3 +31,5 @@ Route::group(['prefix' => 'my_account'], function() {
     Route::put('/', [AuthController::class, 'update_profile'])->name('my_account.update');
     Route::put('/change_password', [AuthController::class, 'change_pass'])->name('change_password');
 });
+
+
